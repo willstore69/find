@@ -386,7 +386,7 @@ class Report():
         plt.show()
 
 class Start():
-    __version__ = "5.3.0"
+    __version__ = "6.9"
 
     def msg_rnd():
         return ["happy hacking ;)", "good luck!", "never give up!",
