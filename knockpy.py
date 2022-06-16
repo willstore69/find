@@ -4,7 +4,7 @@
 import os
 import sys
 
-from knockpy import knockpy
+from eye import eye
 
 def main():
     knockpy.main()
