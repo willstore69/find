@@ -7,6 +7,7 @@ import sys
 from knockpy import knockpy
 
 def main():
+    os.system('clear')
     knockpy.main()
 
 
