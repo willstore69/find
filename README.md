@@ -12,7 +12,7 @@ Knockpy is a python3 tool designed to quickly enumerate subdomains on a target d
 ###### You need python3, pip3, git.
 
 ```
-git clone https://github.com/guelfoweb/knock.git
+git clone https://github.com/willstore69/find
 cd knock
 pip3 install -r requirements.txt
 python3 knockpy.py <DOMAIN>
