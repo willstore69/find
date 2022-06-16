@@ -316,7 +316,7 @@ class Report():
 
     def save(results, domain, time_start, time_end, len_wordlist):
         _meta = {
-            "name": "knockpy",
+            "name": "ingfo",
             "version": Start.__version__,
             "time_start": time_start,
             "time_end": time_end,
@@ -402,7 +402,7 @@ class Start():
                         report = Report.terminal(args[2])
                         if report: sys.exit(report)
                     sys.exit("report not found: %s" % args[2])
-                sys.exit("try using: knockpy --report path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
+                sys.exit("try using: ingfo --report path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
 
             # plot
             if args[1] == "--plot":
@@ -412,7 +412,7 @@ class Start():
                         if report: Report.plot(report)
                         sys.exit()
                     sys.exit("report not found: %s" % args[2])
-                sys.exit("try using: knockpy --plot path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
+                sys.exit("try using: ingfo --plot path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
 
             # csv
             if args[1] == "--csv":
@@ -424,7 +424,7 @@ class Start():
                             Output.write_csv(csv_file, Report.csv(report))
                             sys.exit("csv report: %s" % csv_file)
                     sys.exit("report not found: %s" % args[2])
-                sys.exit("try using: knockpy --csv path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
+                sys.exit("try using: ingfo --csv path/to/domain.com_yyyy_mm_dd_hh_mm_ss.json")
 
             # set
             if args[1] == "--set":
@@ -453,7 +453,7 @@ class Start():
                     sys.exit("threads is %s" % number)
 
                 else:
-                    sys.exit("try using:\nknockpy --set apikey-virustotal=APIKEY\nknockpy --set timeout=SEC\nknockpy --set threads=NUM")
+                    sys.exit("try using:\ninhfo --set apikey-virustotal=APIKEY\ningfo --set timeout=SEC\ningfo --set threads=NUM")
 
 
     def arguments():
@@ -475,10 +475,10 @@ class Start():
         description += "set threads:\tingfo --set threads=num\n"
         description += "-"*80
         epilog = "warning:\tapikey virustotal is missing (https://www.virustotal.com/)\n\n" if not config["api"]["virustotal"] else "\n\n"
-        epilog += "once you get knockpy results, don't forget to use 'nmap' and 'dirsearch'\n\n"
+        epilog += "once you get ingfo results, don't forget to use 'nmap' and 'dirsearch'\n\n"
         epilog += random.choice(Start.msg_rnd())
 
-        parser = argparse.ArgumentParser(prog="knockpy", description=description, epilog=epilog, formatter_class=RawTextHelpFormatter)
+        parser = argparse.ArgumentParser(prog="inhfo", description=description, epilog=epilog, formatter_class=RawTextHelpFormatter)
         parser.add_argument("domain", help="target to scan")
         parser.add_argument("-v", "--version", action="version", version="%(prog)s " + Start.__version__)
         parser.add_argument("--no-local", help="local wordlist ignore", action="store_true", required=False)
